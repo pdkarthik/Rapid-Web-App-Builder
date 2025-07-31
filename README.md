@@ -1,1 +1,1 @@
-🌐 Hosted Link 🔗 https://task-6qrl.onrender.com
+🌐 Live: 🔗 https://task-6qrl.onrender.com
