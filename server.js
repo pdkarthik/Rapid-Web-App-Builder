@@ -95,10 +95,6 @@ const connectToMDB = async () => {
 
 connectToMDB();
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/build/index.html")); // ✅
-});
-
 // Register
 app.post("/register", upload.single("profilePic"), async (req, res) => {
   try {
@@ -205,6 +201,10 @@ app.post("/validateToken", upload.none(), async (req, res) => {
       .status(401)
       .json({ status: "failure", msg: "Invalid token", error: err.message });
   }
+});
+
+app.get("/:any*", (req, res) => {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
 app.listen(4567, () => console.log(`\nServer running on port 4567...\n`));
